@@ -11,6 +11,7 @@ License:	GPL
 Group:		Libraries
 #Source0Download:	http://www.mega-nerd.com/SRC/download.html
 Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
+# Source0-md5:	6b15cc39d1275f1118de4d57f89544eb
 URL:		http://www.mega-nerd.com/SRC/
 %{!?_without_tests:BuildRequires:	fftw-devel}
 BuildRequires:	libsndfile-devel >= 1.0.2
