@@ -17,7 +17,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 %{?with_tests:BuildRequires:	fftw3-devel}
-BuildRequires:	libsndfile-devel >= 1.0.2
+BuildRequires:	libsndfile-devel >= 1.0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
