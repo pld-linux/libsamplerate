@@ -6,7 +6,7 @@ Summary:	Sample Rate Converter library
 Summary(pl):	Biblioteka do konwersji czêstotliwo¶ci próbkowania
 Name:		libsamplerate
 Version:	0.1.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 #Source0Download:	http://www.mega-nerd.com/SRC/download.html
@@ -16,7 +16,7 @@ URL:		http://www.mega-nerd.com/SRC/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-%{?with_tests:BuildRequires:	fftw-devel}
+%{?with_tests:BuildRequires:	fftw3-devel}
 BuildRequires:	libsndfile-devel >= 1.0.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
