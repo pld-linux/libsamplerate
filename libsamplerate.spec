@@ -5,13 +5,13 @@
 Summary:	Sample Rate Converter library
 Summary(pl):	Biblioteka do konwersji czêstotliwo¶ci próbkowania
 Name:		libsamplerate
-Version:	0.0.15
-Release:	3
+Version:	0.1.2
+Release:	1
 License:	GPL
 Group:		Libraries
 #Source0Download:	http://www.mega-nerd.com/SRC/download.html
 Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
-# Source0-md5:	6b15cc39d1275f1118de4d57f89544eb
+# Source0-md5:	06861c2c6b8e5273c9b80cf736b9fd0e
 URL:		http://www.mega-nerd.com/SRC/
 BuildRequires:	autoconf
 BuildRequires:	automake
