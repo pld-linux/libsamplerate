@@ -46,7 +46,7 @@ wyj¶cia.
 Summary:	Header file for libsamplerate library
 Summary(pl):	Plik nag³ówkowy biblioteki libsamplerate
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header file for libsamplerate library.
@@ -58,7 +58,7 @@ Plik nag³ówkowy biblioteki libsamplerate.
 Summary:	libsamplerate static library
 Summary(pl):	Statyczna biblioteka libsamplerate
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libsamplerate static library.
@@ -70,7 +70,7 @@ Statyczna biblioteka libsamplerate.
 Summary:	libsamplerate utilities
 Summary(pl):	Narzêdzia do libsamplerate
 Group:		Applications/Sound
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description tools
 libsamplerate utilities - currently include one program to resample
