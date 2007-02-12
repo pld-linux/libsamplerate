@@ -3,7 +3,7 @@
 %bcond_without	tests	# do not perform "make check"
 #
 Summary:	Sample Rate Converter library
-Summary(pl):	Biblioteka do konwersji czêstotliwo¶ci próbkowania
+Summary(pl.UTF-8):   Biblioteka do konwersji czÄ™stotliwoÅ›ci prÃ³bkowania
 Name:		libsamplerate
 Version:	0.1.2
 Release:	2
@@ -31,45 +31,45 @@ signal-to-noise ratio of 97dB with -3dB passband extending from DC to
 96% of the theoretical best bandwidth for a given pair of input and
 output sample rates.
 
-%description -l pl
-Biblioteka libsamplerate (zwana tak¿e Secret Rabbit Code lub Sample
-Rate Converter - w skrócie SRC) s³u¿y do konwersji czêstotliwo¶ci
-próbkowania d¼wiêku. SRC mo¿e wykonywaæ dowolnych konwersji - od
-zmniejszania czêstotliwo¶ci do 12 razy do zwiêkszania o ten sam
-wspó³czynnik. SRC udostêpnia niewielki zestaw konwerterów
-pozwalaj±cych na pogodzenie jako¶ci i czasu trwania konwersji.
-Aktualnie najlepszy konwerter udostêpnia wspó³czynnik sygna³/szum 97dB
+%description -l pl.UTF-8
+Biblioteka libsamplerate (zwana takÅ¼e Secret Rabbit Code lub Sample
+Rate Converter - w skrÃ³cie SRC) sÅ‚uÅ¼y do konwersji czÄ™stotliwoÅ›ci
+prÃ³bkowania dÅºwiÄ™ku. SRC moÅ¼e wykonywaÄ‡ dowolnych konwersji - od
+zmniejszania czÄ™stotliwoÅ›ci do 12 razy do zwiÄ™kszania o ten sam
+wspÃ³Å‚czynnik. SRC udostÄ™pnia niewielki zestaw konwerterÃ³w
+pozwalajÄ…cych na pogodzenie jakoÅ›ci i czasu trwania konwersji.
+Aktualnie najlepszy konwerter udostÄ™pnia wspÃ³Å‚czynnik sygnaÅ‚/szum 97dB
 z rozszerzeniem zakresu pasma -3dB z DC do 96% teoretycznie
-najlepszego pasma dla danej pary czêstotliwo¶ci próbkowania wej¶cia i
-wyj¶cia.
+najlepszego pasma dla danej pary czÄ™stotliwoÅ›ci prÃ³bkowania wejÅ›cia i
+wyjÅ›cia.
 
 %package devel
 Summary:	Header file for libsamplerate library
-Summary(pl):	Plik nag³ówkowy biblioteki libsamplerate
+Summary(pl.UTF-8):   Plik nagÅ‚Ã³wkowy biblioteki libsamplerate
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header file for libsamplerate library.
 
-%description devel -l pl
-Plik nag³ówkowy biblioteki libsamplerate.
+%description devel -l pl.UTF-8
+Plik nagÅ‚Ã³wkowy biblioteki libsamplerate.
 
 %package static
 Summary:	libsamplerate static library
-Summary(pl):	Statyczna biblioteka libsamplerate
+Summary(pl.UTF-8):   Statyczna biblioteka libsamplerate
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 libsamplerate static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libsamplerate.
 
 %package tools
 Summary:	libsamplerate utilities
-Summary(pl):	Narzêdzia do libsamplerate
+Summary(pl.UTF-8):   NarzÄ™dzia do libsamplerate
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
@@ -77,9 +77,9 @@ Requires:	%{name} = %{version}-%{release}
 libsamplerate utilities - currently include one program to resample
 audio files read and written using libsndfile.
 
-%description tools -l pl
-Narzêdzia do libsamplerate - aktualnie zawieraj± program do zmiany
-czêstotliwo¶ci próbkowania plików d¼wiêkowych czytanych i zapisywanych
+%description tools -l pl.UTF-8
+NarzÄ™dzia do libsamplerate - aktualnie zawierajÄ… program do zmiany
+czÄ™stotliwoÅ›ci prÃ³bkowania plikÃ³w dÅºwiÄ™kowych czytanych i zapisywanych
 przez libsndfile.
 
 %prep
