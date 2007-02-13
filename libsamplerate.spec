@@ -3,7 +3,7 @@
 %bcond_without	tests	# do not perform "make check"
 #
 Summary:	Sample Rate Converter library
-Summary(pl.UTF-8):   Biblioteka do konwersji częstotliwości próbkowania
+Summary(pl.UTF-8):	Biblioteka do konwersji częstotliwości próbkowania
 Name:		libsamplerate
 Version:	0.1.2
 Release:	2
@@ -45,7 +45,7 @@ wyjścia.
 
 %package devel
 Summary:	Header file for libsamplerate library
-Summary(pl.UTF-8):   Plik nagłówkowy biblioteki libsamplerate
+Summary(pl.UTF-8):	Plik nagłówkowy biblioteki libsamplerate
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -57,7 +57,7 @@ Plik nagłówkowy biblioteki libsamplerate.
 
 %package static
 Summary:	libsamplerate static library
-Summary(pl.UTF-8):   Statyczna biblioteka libsamplerate
+Summary(pl.UTF-8):	Statyczna biblioteka libsamplerate
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -69,7 +69,7 @@ Statyczna biblioteka libsamplerate.
 
 %package tools
 Summary:	libsamplerate utilities
-Summary(pl.UTF-8):   Narzędzia do libsamplerate
+Summary(pl.UTF-8):	Narzędzia do libsamplerate
 Group:		Applications/Sound
 Requires:	%{name} = %{version}-%{release}
 
