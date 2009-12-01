@@ -15,9 +15,10 @@ Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
 URL:		http://www.mega-nerd.com/SRC/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 %{?with_tests:BuildRequires:	fftw3-devel}
+BuildRequires:	libtool
 BuildRequires:	libsndfile-devel >= 1.0.10
+BuildRequires:	pkgconfig
 Requires:	libsndfile >= 1.0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
