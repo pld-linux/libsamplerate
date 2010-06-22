@@ -5,18 +5,15 @@
 Summary:	Sample Rate Converter library
 Summary(pl.UTF-8):	Biblioteka do konwersji częstotliwości próbkowania
 Name:		libsamplerate
-Version:	0.1.2
-Release:	3
-License:	GPL
+Version:	0.1.7
+Release:	1
+License:	GPL v2+
 Group:		Libraries
 #Source0Download:	http://www.mega-nerd.com/SRC/download.html
 Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
-# Source0-md5:	06861c2c6b8e5273c9b80cf736b9fd0e
+# Source0-md5:	ad093e60ec44f0a60de8e29983ddbc0f
 URL:		http://www.mega-nerd.com/SRC/
-BuildRequires:	autoconf
-BuildRequires:	automake
-%{?with_tests:BuildRequires:	fftw3-devel}
-BuildRequires:	libtool
+%{?with_tests:BuildRequires:	fftw3-devel >= 0.15.0}
 BuildRequires:	libsndfile-devel >= 1.0.10
 BuildRequires:	pkgconfig
 Requires:	libsndfile >= 1.0.10
@@ -87,10 +84,6 @@ przez libsndfile.
 %setup -q
 
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
 %configure
 %{__make}
 
@@ -110,19 +103,20 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README doc/*.{html,css,png}
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%doc AUTHORS ChangeLog NEWS README doc/*.{html,css,png}
+%attr(755,root,root) %{_libdir}/libsamplerate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsamplerate.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*.h
-%{_pkgconfigdir}/*.pc
+%attr(755,root,root) %{_libdir}/libsamplerate.so
+%{_libdir}/libsamplerate.la
+%{_includedir}/samplerate.h
+%{_pkgconfigdir}/samplerate.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libsamplerate.a
 
 %files tools
 %defattr(644,root,root,755)
