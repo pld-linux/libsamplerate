@@ -5,14 +5,13 @@
 Summary:	Sample Rate Converter library
 Summary(pl.UTF-8):	Biblioteka do konwersji częstotliwości próbkowania
 Name:		libsamplerate
-Version:	0.1.7
-Release:	2
+Version:	0.1.8
+Release:	1
 License:	GPL v2+
 Group:		Libraries
 #Source0Download:	http://www.mega-nerd.com/SRC/download.html
 Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
-# Source0-md5:	ad093e60ec44f0a60de8e29983ddbc0f
-Patch0:		%{name}-tests.patch
+# Source0-md5:	1c7fb25191b4e6e3628d198a66a84f47
 URL:		http://www.mega-nerd.com/SRC/
 %{?with_tests:BuildRequires:	fftw3-devel >= 0.15.0}
 BuildRequires:	libsndfile-devel >= 1.0.10
@@ -83,10 +82,10 @@ przez libsndfile.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %{?with_tests:%{__make} -C tests check}
