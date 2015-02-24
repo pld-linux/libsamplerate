@@ -6,7 +6,7 @@ Summary:	Sample Rate Converter library
 Summary(pl.UTF-8):	Biblioteka do konwersji częstotliwości próbkowania
 Name:		libsamplerate
 Version:	0.1.8
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 #Source0Download:	http://www.mega-nerd.com/SRC/download.html
