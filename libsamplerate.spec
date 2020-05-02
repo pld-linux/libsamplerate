@@ -84,6 +84,7 @@ przez libsndfile.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub Cfg
 %configure \
 	--disable-silent-rules
 %{__make}
