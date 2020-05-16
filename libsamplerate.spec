@@ -13,6 +13,7 @@ Group:		Libraries
 Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
 # Source0-md5:	2b78ae9fe63b36b9fbb6267fad93f259
 URL:		http://www.mega-nerd.com/SRC/
+BuildRequires:	automake
 %{?with_tests:BuildRequires:	fftw3-devel >= 0.15.0}
 BuildRequires:	libsndfile-devel >= 1.0.10
 BuildRequires:	pkgconfig
