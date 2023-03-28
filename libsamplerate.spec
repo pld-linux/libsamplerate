@@ -1,22 +1,25 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make check"
+%bcond_without	static_libs	# static library
+%bcond_without	tests		# unit tests
 #
 Summary:	Sample Rate Converter library
 Summary(pl.UTF-8):	Biblioteka do konwersji częstotliwości próbkowania
 Name:		libsamplerate
-Version:	0.1.9
+Version:	0.2.2
 Release:	1
 License:	BSD
 Group:		Libraries
-#Source0Download:	http://www.mega-nerd.com/SRC/download.html
-Source0:	http://www.mega-nerd.com/SRC/%{name}-%{version}.tar.gz
-# Source0-md5:	2b78ae9fe63b36b9fbb6267fad93f259
+#Source0Download: https://github.com/libsndfile/libsamplerate/releases
+Source0:	https://github.com/libsndfile/libsamplerate/releases/download/%{version}/%{name}-%{version}.tar.xz
+# Source0-md5:	97c010fc25156c33cddc272c1935afab
 URL:		http://www.mega-nerd.com/SRC/
-BuildRequires:	automake
-%{?with_tests:BuildRequires:	fftw3-devel >= 0.15.0}
+BuildRequires:	alsa-lib-devel >= 0.9
+%{?with_tests:BuildRequires:	fftw3-devel >= 3.0.0}
 BuildRequires:	libsndfile-devel >= 1.0.10
 BuildRequires:	pkgconfig
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires:	libsndfile >= 1.0.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -66,31 +69,17 @@ libsamplerate static library.
 %description static -l pl.UTF-8
 Statyczna biblioteka libsamplerate.
 
-%package tools
-Summary:	libsamplerate utilities
-Summary(pl.UTF-8):	Narzędzia do libsamplerate
-Group:		Applications/Sound
-Requires:	%{name} = %{version}-%{release}
-
-%description tools
-libsamplerate utilities - currently include one program to resample
-audio files read and written using libsndfile.
-
-%description tools -l pl.UTF-8
-Narzędzia do libsamplerate - aktualnie zawierają program do zmiany
-częstotliwości próbkowania plików dźwiękowych czytanych i zapisywanych
-przez libsndfile.
-
 %prep
 %setup -q
 
 %build
-cp -f /usr/share/automake/config.sub Cfg
 %configure \
-	--disable-silent-rules
+	--disable-silent-rules \
+	%{?with_static_libs:--enable-static}
+
 %{__make}
 
-%{?with_tests:%{__make} -C tests check}
+%{?with_tests:%{__make} check}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -99,7 +88,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # packaged as %doc
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libsamplerate0-dev
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/libsamplerate
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -109,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog NEWS README doc/*.{html,css,png}
+%doc AUTHORS COPYING ChangeLog NEWS README.md docs/*.md
 %attr(755,root,root) %{_libdir}/libsamplerate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libsamplerate.so.0
 
@@ -120,10 +109,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/samplerate.h
 %{_pkgconfigdir}/samplerate.pc
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libsamplerate.a
-
-%files tools
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/sndfile-resample
+%endif
